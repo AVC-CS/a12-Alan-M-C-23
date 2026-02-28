@@ -12,9 +12,8 @@ int uninitGlobal2;
 // and compares with a local variable (child frame)
 void checkStack(int* parentAddr) {
     int childVar = 0;
-    cout << "Address 1 (main frame param): " << (void*)parentAddr << endl;
-    cout << "Address 2 (func frame param): " << (void*)&parentAddr << endl;
-    cout << "Address 3 (func frame local): " << (void*)&childVar << endl;
+    cout << "Address 1 (func frame param ptr): " << (void*)&parentAddr << endl;
+    cout << "Address 2 (func frame local):     " << (void*)&childVar << endl;
 
     if (parentAddr > &childVar) {
         cout << "Stack grows: DOWN" << endl;
@@ -23,7 +22,6 @@ void checkStack(int* parentAddr) {
     }
     cout << endl;
 }
-
 int main() {
 
     int mainVar = 10;
@@ -59,12 +57,10 @@ int main() {
     cout << "uninitGlobal2 addr: " << (void*)&uninitGlobal2 << endl;
     cout << endl;
 
-    
-cout << "--- STACK SEGMENT ---" << endl;
-cout << "Address 0 (main frame local): " << (void*)&mainVar << endl;
-checkStack(&mainVar);
-    // STACK: call checkStack with address of your local variable
-    // TODO: checkStack(&yourLocalVar);
+
+    cout << "--- STACK SEGMENT ---" << endl;
+    cout << "Address 0 (main frame local):     " << (void*)&mainVar << endl;
+    checkStack(&mainVar);
 
     // TODO: Print HEAP segment - 2 heap addresses + comparison
     //       Print "Heap grows: UP" or "DOWN"
@@ -82,18 +78,8 @@ cout << "TEXT (lowest) : " << (void*)&main << endl;
     cout << "DATA          : " << (void*)&globalVar << endl;
     cout << "BSS           : " << (void*)&uninitGlobal << endl;
     cout << "HEAP          : " << (void*)heapVar1 << endl;
-    cout << "STACK (highest): " << (void*)&mainVar << endl;
+    cout << "STK (highest): " << (void*)&mainVar << endl;
     free(heapVar1);
     free(heapVar2);
     return 0;
 }
-
-/*
- * EXPERIMENTAL RESULTS:
- * TODO: After running your program, explain what you observed:
- * - Which segment has the lowest addresses?
- * - Which has the highest?
- * - Does stack grow down? How did you verify this?
- * - Does heap grow up? How did you verify this?
- * - What is the gap between HEAP and STACK?
- */
