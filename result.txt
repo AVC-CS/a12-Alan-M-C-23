@@ -1,25 +1,31 @@
 === MEMORY SEGMENT BOUNDARIES ===
 
 --- TEXT SEGMENT (Code) ---
-Address of main() : 0x562e1fdcd342
-Address of checkStack() : 0x562e1fdcd199
+Address of main() : 0x55b86e6472cd
+Address of checkSTK() : 0x55b86e647199
 
 --- DATA SEGMENT (Initialized Globals) ---
-globalVar addr : 0x562e1fdd0048 value: 100
-staticVar addr : 0x562e1fdd004cvalue : 200
+globalVar addr : 0x55b86e64a048 value: 100
+staticVar addr : 0x55b86e64a04cvalue : 200
 
 --- BSS SEGMENT (Uninitialized Globals) ---
-uninitGlobal addr: 0x562e1fdd0194 value: 0
-uninitGlobal2 addr: 0x562e1fdd0198 value: 0
+uninitGlobal addr : 0x55b86e64a194
+uninitGlobal2 addr: 0x55b86e64a198
+
+--- STACK SEGMENT ---
+Address 0 (main frame local):     0x7fff486c90c4
+Address 1 (func frame param ptr): 0x7fff486c9098
+Address 2 (func frame local):     0x7fff486c90a4
+Stack grows: DOWN
 
 --- HEAP SEGMENT (Dynamic Allocation) ---
-heapVar1 addr    : 0x562e33c5f320
-heapVar2 addr    : 0x562e33c5f730
+heapVar1 addr    : 0x55b8919a4320
+heapVar2 addr    : 0x55b8919a4730
 Heap Grows: UP (lower to Higher)
 
 === RELATIVE POSITION SUMMARY ===
-TEXT (lowest) : 0x562e1fdcd342
-DATA : 0x562e1fdd0048
-BSS : 0x562e1fdd0194
-HEAP  : 0x562e33c5f320
-STACK (highest)0x7ffe80813664
+TEXT (lowest) : 0x55b86e6472cd
+DATA          : 0x55b86e64a048
+BSS           : 0x55b86e64a194
+HEAP          : 0x55b8919a4320
+STK (highest): 0x7fff486c90c4
