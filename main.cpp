@@ -10,7 +10,7 @@ int uninitGlobal;
 int uninitGlobal2;
 // Stack check function: receives address from caller (parent frame)
 // and compares with a local variable (child frame)
-void checkStack(int* parentAddr) {
+void checkSTK(int* parentAddr) {
     int childVar = 0;
     cout << "Address 1 (func frame param ptr): " << (void*)&parentAddr << endl;
     cout << "Address 2 (func frame local):     " << (void*)&childVar << endl;
@@ -40,7 +40,7 @@ int main() {
     //       e.g., (void*)&main and (void*)&checkStack
     cout << "--- TEXT SEGMENT (Code) ---" << endl;
     cout << "Address of main() : " << (void*)&main << endl;
-    cout << "Address of checkStack() : " << (void*)&checkStack << endl;
+    cout << "Address of checkSTK() : " << (void*)&checkSTK << endl;
     // ...
     cout << endl;
 
@@ -60,7 +60,7 @@ int main() {
 
     cout << "--- STACK SEGMENT ---" << endl;
     cout << "Address 0 (main frame local):     " << (void*)&mainVar << endl;
-    checkStack(&mainVar);
+    checkSTK(&mainVar);
 
     // TODO: Print HEAP segment - 2 heap addresses + comparison
     //       Print "Heap grows: UP" or "DOWN"
