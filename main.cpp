@@ -16,7 +16,13 @@ void checkStack(int* parentAddr) {
     cout << "main local addr (parent frame): " << (void*)parentAddr << endl;
     cout << "param addr (child frame)      : " << (void*)&parentAddr << endl;
     cout << "child local addr (child frame): " << (void*)&childVar << endl;
-    cout << "Stack grows: " << (parentAddr > &childVar ? "DOWN! (parent frame > childrframe)" : "UP") << endl; cout << endl;
+    if (parentAddr > &childVar) {
+        cout << "Stack grows: DOWN! (parent fram > child frame)" << endl; 
+    }   else {
+            cout << "Stack grows: UP" << endl; 
+    }
+    
+
     // TODO: Print parentAddr value (points to main's local var - parent frame)
     // TODO: Print &parentAddr (parameter's own address - child frame)
     // TODO: Print &childVar (local var address - child frame)
@@ -57,11 +63,12 @@ int main() {
 
     // TODO: Print BSS segment - 2 uninitialized global addresses + values
     cout << "--- BSS SEGMENT (Uninitialized Globals) ---" << endl;
-    cout << "uninitGlobal addr: " << (void*)&uninitGlobal << " value: " << uninitGlobal << endl;
-    cout << "uninitGlobal2 addr: " << (void*)&uninitGlobal2 <<" value: "<< uninitGlobal2 << endl;
+    cout << "uninitGlobal addr: " << (void*)&uninitGlobal << endl;
+    cout << "uninitGlobal2 addr: " << (void*)&uninitGlobal2 <<endl;
     // ...
     cout << endl;
 
+    checkStack(&mainVar);
     // STACK: call checkStack with address of your local variable
     // TODO: checkStack(&yourLocalVar);
 

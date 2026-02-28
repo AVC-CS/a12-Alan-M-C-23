@@ -1,0 +1,25 @@
+=== MEMORY SEGMENT BOUNDARIES ===
+
+--- TEXT SEGMENT (Code) ---
+Address of main() : 0x562e1fdcd342
+Address of checkStack() : 0x562e1fdcd199
+
+--- DATA SEGMENT (Initialized Globals) ---
+globalVar addr : 0x562e1fdd0048 value: 100
+staticVar addr : 0x562e1fdd004cvalue : 200
+
+--- BSS SEGMENT (Uninitialized Globals) ---
+uninitGlobal addr: 0x562e1fdd0194 value: 0
+uninitGlobal2 addr: 0x562e1fdd0198 value: 0
+
+--- HEAP SEGMENT (Dynamic Allocation) ---
+heapVar1 addr    : 0x562e33c5f320
+heapVar2 addr    : 0x562e33c5f730
+Heap Grows: UP (lower to Higher)
+
+=== RELATIVE POSITION SUMMARY ===
+TEXT (lowest) : 0x562e1fdcd342
+DATA : 0x562e1fdd0048
+BSS : 0x562e1fdd0194
+HEAP  : 0x562e33c5f320
+STACK (highest)0x7ffe80813664
