@@ -82,7 +82,7 @@ cout << "TEXT (lowest) : " << (void*)&main << endl;
     cout << "DATA          : " << (void*)&globalVar << endl;
     cout << "BSS           : " << (void*)&uninitGlobal << endl;
     cout << "HEAP          : " << (void*)heapVar1 << endl;
-    cout << "STACK (highest): " << (void*)&mainVar << endl;
+    cout << "LOCAL VARS (highest): " << (void*)&mainVar << endl;
     free(heapVar1);
     free(heapVar2);
     return 0;
