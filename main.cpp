@@ -4,7 +4,7 @@ using namespace std;
 
 // TODO: Declare 2 initialized global variables (DATA segment)
 int globalVar = 100;
-static int staticVar = 200;
+int globalVar2 = 200;
 // TODO: Declare 2 uninitialized global variables (BSS segment)
 int uninitGlobal;
 int uninitGlobal2;
@@ -57,7 +57,7 @@ int main() {
     // TODO: Print DATA segment - 2 initialized global addresses + values
     cout << "--- DATA SEGMENT (Initialized Globals) ---" << endl;
     cout << "globalVar addr : " << (void*)&globalVar << " value: " << globalVar << endl;
-    cout << "staticVar addr : " << (void*)&staticVar << "value : " << staticVar << endl;
+    cout << "staticVar addr : " << (void*)&globalVar2 << "value : " << globalVar2 << endl;
     // ...
     cout << endl;
 
